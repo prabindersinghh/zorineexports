@@ -3,7 +3,7 @@ import { Marcellus, Manrope } from "next/font/google";
 import "./globals.css";
 import { SmoothScrollProvider } from "@/components/smooth-scroll-provider";
 import { PageTransition } from "@/components/page-transition";
-import { Footer, Header } from "@/components/site-shell";
+import { Footer, Header, TickerStrip } from "@/components/site-shell";
 
 const marcellus = Marcellus({ subsets: ["latin"], weight: "400", variable: "--font-display", display: "swap" });
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-body", display: "swap" });
@@ -30,6 +30,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         <SmoothScrollProvider>
           <Header />
+          <TickerStrip />
           <main><PageTransition>{children}</PageTransition></main>
           <Footer />
         </SmoothScrollProvider>

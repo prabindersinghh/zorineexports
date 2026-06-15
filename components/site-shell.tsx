@@ -122,6 +122,35 @@ export function Header() {
   );
 }
 
+export function TickerStrip() {
+  const items = [
+    "Premium Indian Spices",
+    "Export-Grade Fresh Produce",
+    "Natural Honey & Superfoods",
+    "APEDA-Aware Sourcing",
+    "Global Buyer Ready",
+    "Clean Export Documentation",
+    "Millets & Ancient Grains",
+    "Dry Fruits & Nuts",
+    "Premium Packaging Standards",
+    "Indian Handicrafts",
+    "Trusted Trade Partner",
+    "Herb & Botanical Exports",
+  ];
+
+  return (
+    <div className="ticker-strip" aria-hidden="true">
+      <div className="ticker-track">
+        {[...items, ...items].map((item, i) => (
+          <span key={i} className="ticker-item">
+            {item} <span className="ticker-sep">✦</span>
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function Footer() {
   return (
     <footer className="site-footer">

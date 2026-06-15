@@ -7,10 +7,10 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: "bg-[var(--forest)] text-white shadow-[0_18px_50px_rgba(35,75,42,.22)] hover:-translate-y-0.5 hover:bg-[var(--forest-2)]",
-        cream: "bg-[var(--cream)] text-[var(--forest)] hover:-translate-y-0.5 hover:bg-white",
-        outline: "border border-[rgba(35,75,42,.18)] bg-white/70 text-[var(--forest)] backdrop-blur-xl hover:-translate-y-0.5 hover:border-[var(--gold)]",
-        ghost: "text-[var(--forest)] hover:bg-[rgba(35,75,42,.07)]",
+        primary: "btn-primary bg-[var(--forest)] shadow-[0_18px_50px_rgba(35,75,42,.22)] hover:-translate-y-0.5 hover:bg-[var(--forest-2)]",
+        cream: "btn-cream bg-[var(--cream)] hover:-translate-y-0.5 hover:bg-white",
+        outline: "btn-outline border border-[rgba(35,75,42,.18)] bg-white/70 backdrop-blur-xl hover:-translate-y-0.5 hover:border-[var(--gold)]",
+        ghost: "btn-ghost hover:bg-[rgba(35,75,42,.07)]",
       },
       size: {
         md: "h-12 px-6",

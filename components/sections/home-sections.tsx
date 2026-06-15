@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, BadgeCheck, Box, Globe2, Plane, ShieldCheck, Sparkles } from "lucide-react";
 import { HeroAura } from "@/components/hero-aura";
-import { Reveal, RevealText } from "@/components/reveal";
+import { HeroReveal, Reveal, RevealText } from "@/components/reveal";
 import { CounterStrip } from "@/components/scroll-effects";
 import { buttonClassName } from "@/components/ui/button";
 import { insights, process, products } from "@/data/site";
@@ -27,16 +27,16 @@ export function HomeHero() {
       <HeroAura />
       <div className="hero-grid">
         <div className="hero-copy">
-          <Reveal direction="none">
+          <HeroReveal delay={0.05}>
             <Eyebrow>Premium Indian Export House</Eyebrow>
-          </Reveal>
-          <RevealText delay={0.05} className="hero-h1-wrap">
+          </HeroReveal>
+          <RevealText delay={0.12} className="hero-h1-wrap">
             <h1>Global sourcing for buyers who expect discipline, beauty, and reliability.</h1>
           </RevealText>
-          <Reveal delay={0.22}>
+          <HeroReveal delay={0.32}>
             <p>Zorine Exports brings Indian agricultural products, natural foods, and artisan goods into a polished export experience: clean sourcing, refined packaging, and clear buyer communication.</p>
-          </Reveal>
-          <Reveal delay={0.32}>
+          </HeroReveal>
+          <HeroReveal delay={0.44}>
             <div className="hero-actions">
               <Link className={buttonClassName({ variant: "primary", size: "lg" })} href="/contact">
                 Start Export Inquiry <ArrowUpRight size={18} />
@@ -45,16 +45,16 @@ export function HomeHero() {
                 Explore Portfolio
               </Link>
             </div>
-          </Reveal>
-          <Reveal delay={0.42}>
+          </HeroReveal>
+          <HeroReveal delay={0.54}>
             <div className="hero-proof">
               <span>APEDA-aware sourcing</span>
               <span>Spice Board mindset</span>
               <span>Global buyer ready</span>
             </div>
-          </Reveal>
+          </HeroReveal>
         </div>
-        <Reveal delay={0.18} className="hero-visual">
+        <HeroReveal delay={0.22} className="hero-visual">
           <div className="visual-card card-main">
             <Image src="/img/slideshow/home4-slideshow-1.jpg" alt="Premium Indian produce for export" fill priority sizes="(max-width: 900px) 100vw, 46vw" />
           </div>
@@ -65,7 +65,7 @@ export function HomeHero() {
             <Image src="/img/product/honey/honey1.jpg" alt="Natural honey" fill sizes="260px" />
           </div>
           <div className="floating-cert"><BadgeCheck size={20} /><span>Export-ready categories</span></div>
-        </Reveal>
+        </HeroReveal>
       </div>
     </section>
   );
