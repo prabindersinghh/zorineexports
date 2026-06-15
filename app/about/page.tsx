@@ -1,0 +1,12 @@
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRight, Award, Factory, Globe2, ShieldCheck } from "lucide-react";
+import { Reveal } from "@/components/reveal";
+import { SectionIntro, FinalCta } from "@/components/sections/home-sections";
+import { buttonClassName } from "@/components/ui/button";
+
+export const metadata = { title: "About", description: "About Zorine Exports and its premium Indian export sourcing philosophy." };
+
+export default function AboutPage() {
+  return <><section className="page-hero"><Reveal><span className="eyebrow">About Zorine</span><h1>An export brand rebuilt around buyer trust, not template noise.</h1><p>Zorine Exports is positioned as a refined Indian sourcing partner for agricultural products, natural foods, and handcrafted goods.</p><Link href="/contact" className={buttonClassName({ variant: "primary", size: "lg" })}>Discuss Sourcing <ArrowUpRight size={18} /></Link></Reveal><Reveal delay={0.12} className="page-hero-image"><Image src="/img/intro-1.png" alt="Zorine Exports sourcing" fill sizes="(max-width: 900px) 100vw, 42vw" /></Reveal></section><section className="section editorial-grid"><Reveal><span className="eyebrow">Operating philosophy</span><h2>Global quality is communicated through restraint, structure, and consistency.</h2></Reveal><Reveal delay={0.1} className="editorial-copy"><p>The site now speaks to procurement teams: categories are legible, claims are controlled, and every interaction points toward a serious export conversation.</p><div className="mini-features"><span><ShieldCheck /> Standards mindset</span><span><Factory /> Sourcing discipline</span><span><Globe2 /> Global presentation</span><span><Award /> Premium posture</span></div></Reveal></section><section className="section muted-section"><SectionIntro eyebrow="Trust architecture" title="What the brand must signal instantly" text="A buyer should feel that Zorine understands quality, packaging, documentation, and international communication." /><div className="process-grid"><Reveal className="process-card"><span>01</span><h3>Clear range</h3><p>Every product category is easy to scan and inquire about.</p></Reveal><Reveal delay={0.07} className="process-card"><span>02</span><h3>Premium tone</h3><p>Luxury spacing and refined visuals create confidence without hype.</p></Reveal><Reveal delay={0.14} className="process-card"><span>03</span><h3>Inquiry focus</h3><p>The site is built for export quote conversations, not retail cart behavior.</p></Reveal></div></section><FinalCta /></>;
+}

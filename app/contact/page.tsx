@@ -1,0 +1,11 @@
+import Link from "next/link";
+import { Mail, MapPin, Phone } from "lucide-react";
+import { Reveal } from "@/components/reveal";
+import { buttonClassName } from "@/components/ui/button";
+import { contact, products } from "@/data/site";
+
+export const metadata = { title: "Contact", description: "Contact Zorine Exports for product sourcing, export quotes, and international buyer inquiries." };
+
+export default function ContactPage() {
+  return <><section className="page-hero contact-hero"><Reveal><span className="eyebrow">Trade desk</span><h1>Tell us what you want to source, where it is going, and how it should be packed.</h1><p>The fastest way to begin is with product category, approximate volume, destination country, preferred packing, and expected timeline.</p></Reveal><Reveal delay={0.1} className="contact-card"><h2>Contact Zorine Exports</h2><a href={`mailto:${contact.email}`}><Mail /> {contact.email}</a><a href={`tel:${contact.phone.replace(/[^+\d]/g, "")}`}><Phone /> {contact.phone}</a><p><MapPin /> {contact.address}</p></Reveal></section><section className="section contact-grid"><Reveal className="inquiry-form"><span className="eyebrow">Inquiry brief</span><h2>Export quote request</h2><form><input aria-label="Name" placeholder="Your name" /><input aria-label="Company" placeholder="Company / country" /><input aria-label="Email" placeholder="Email address" type="email" /><select aria-label="Product category"><option>Choose product category</option>{products.map((item) => <option key={item.slug}>{item.title}</option>)}</select><textarea aria-label="Message" placeholder="Product, volume, packing needs, destination, timeline" rows={6} /><button className={buttonClassName({ variant: "primary", size: "lg", className: "w-full" })} type="submit">Prepare Inquiry</button></form></Reveal><Reveal delay={0.12} className="contact-aside"><h3>What to include</h3><ul><li>Target destination and port</li><li>Estimated monthly or trial volume</li><li>Bulk, retail, or custom packing</li><li>Quality/specification requirements</li><li>Timeline for samples or shipment</li></ul><Link href="mailto:info@zorineexports.com" className={buttonClassName({ variant: "outline", size: "md" })}>Email Directly</Link></Reveal></section></>;
+}
